@@ -34,18 +34,21 @@ h1 {
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    margin-left: -2.5px;
+    margin-right: -2.5px;
 }
 
 .bundesland-card-link {
     display: block;
-    width: calc(33% - 10px);
+    flex: 0 1 calc(33.3333% - 5px);
     border: 10px solid rgba(0, 0, 0, 0.2);
     color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
-    margin: 5px 0;
     padding: 10px;
+    margin-bottom: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
 }
 
 .bundesland-card-link:hover {
@@ -59,4 +62,16 @@ h2 {
 .population {
     font-size: 15px;
     padding-top: 8px;
+}
+
+@media (max-width: 800px) {
+    .bundesland-card-link {
+        flex: 0 1 calc(50% - 5px);
+    }
+}
+
+@media (max-width: 500px) {
+    .bundesland-card-link {
+        flex: 0 1 calc(100% - 5px);
+    }
 }
