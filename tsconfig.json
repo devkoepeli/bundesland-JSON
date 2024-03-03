@@ -1,6 +1,6 @@
 {
     "compilerOptions" : {
-        "target": "es2015",
-        "lib": ["ES2015", "DOM"]
+        "target": "es2016",
+        "lib": ["ES2016", "DOM"]
     }
 }

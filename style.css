@@ -134,6 +134,30 @@ h2 {
     }
 }
 
+.filter-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.filter-item {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.filter-item:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.filter-item-active {
+    background: rgba(0, 0, 0, 0.25);
+}
+
 @media (max-width: 800px) {
     .bundesland-card-link {
         flex: 0 1 calc(50% - 5px);
