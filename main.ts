@@ -13,7 +13,9 @@ const getBundeslaenderData = () => {
 document.addEventListener('DOMContentLoaded', renderTemplate);
 
 async function renderTemplate() {
+    loader('show');
     const data = await getBundeslaenderData();
+    loader('hide');
     const contentContainer = document.querySelector('.container');
     const div = document.createElement('div');
     div.classList.add('bundesland-cards');
@@ -32,4 +34,25 @@ function bundeslandCardTemplate(bundesland: Bundesland): string {
             <p class="population">${bundesland.population} Millionen</p>
         </a>
     `;
+}
+
+function loader(action: 'show' | 'hide') {
+    if (action === 'show') {
+        renderLoader();
+    } else {
+        if (document.querySelector('.loader-overlay')) {
+            document.querySelector('.loader-overlay').remove();
+        }
+    }
+}
+
+function renderLoader() {
+    const loaderOverlay = document.createElement('div');
+    loaderOverlay.classList.add('loader-overlay');
+
+    const loader = document.createElement('span');
+    loader.classList.add('loader');
+    loaderOverlay.append(loader);
+
+    document.querySelector('.container').append(loaderOverlay);
 }
